@@ -31,12 +31,38 @@ public class Department {
         this.departmentName = departmentName;
     }
 
+    public Employee getEmployeeByName(String name) {
+        for (Employee e : employeeList) {
+            if (e.getEmployeeName().equalsIgnoreCase(name)) {
+                return e;
+            }
+        }
+        return null;
+    }
+
+    public Employee getEmployeeById(String Id) {
+        for (Employee e : employeeList) {
+            if (e.getEmployeeId().equalsIgnoreCase(Id)) {
+                return e;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Employee> getEmployeeList() {
         return employeeList;
     }
 
-    public void addEmployee(Employee employee) {
-        this.employeeList.add(employee);
+    public void EmployeeListToString(){
+        System.out.println( "=======================Employee In :" +departmentName+" =======================");
+        for(Employee e : employeeList){
+            System.out.println( e.getEmployeeName());
+        }
+    }
+
+    public void addEmployee(String Name) {
+        Employee E = new Employee(Name);
+        this.employeeList.add(E);
     }
 
     public void removeEmployee(String employeeId) {

@@ -10,6 +10,7 @@ public class Company {
     private String companyName;
     private List<TimeRecord> AllTimeRecordsHistory;
     private List<Department> departments;
+    private ArrayList<Employee> AllEmployee;
 
     // Constructor
     public Company(int companyId, String companyName) {
@@ -20,6 +21,10 @@ public class Company {
     }
 
     // Getters and Setters
+
+    public int Size(){
+        return AllTimeRecordsHistory.size();
+    }
     public int getCompanyId() {
         return companyId;
     }
@@ -48,7 +53,45 @@ public class Company {
         return departments;
     }
 
-    public void addDepartment(String departmentName) {
+    public Department getDepartmentById(int Id){
+        return departments.get(Id);
+    }
+
+    public Department getDepartmentByName(String name) {
+        for (Department department : departments) {
+            if (department.getDepartmentName().equalsIgnoreCase(name)) {
+                return department;
+            }
+        }
+        return null; // Return null if no department matches the name
+    }
+
+    public void DepartmentListToString(){
+        System.out.println( "+++++++++++++++++++++++++Department In :" +companyName+"+++++++++++++++++++++++++");
+        for(Department e : departments){
+            e.EmployeeListToString();
+        }
+        System.out.println( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    }
+
+    public Employee getEmployeeById(String Id) {
+        for (Department D : departments){
+            return D.getEmployeeById(Id);
+        }
+        return null;
+    }
+
+    public Employee getEmployeeByName(String Name) {
+        for (Department D : departments) {
+            Employee employee = D.getEmployeeByName(Name);
+            if (employee != null) {
+                return employee;
+            }
+        }
+        return null; // Return null only if no employee is found in any department
+    }
+
+        public void addDepartment(String departmentName) {
         this.departments.add(new Department(departments.size() + 1, departmentName));
     }
 
@@ -57,8 +100,8 @@ public class Company {
     }
 
     // Methods for managing employees
-    public void addEmployee(Employee employee, Department department) {
-        department.addEmployee(employee);
+    public void addEmployee(String Name, Department department) {
+        department.addEmployee(Name);
     }
 
     public void deleteEmployee(Employee employee) {
@@ -76,5 +119,18 @@ public class Company {
 
     public void checkTimeRecordsByDay(List<TimeRecord> timeRecordsHistory, String date) {
         // Logic for checking time records for a specific day
+    }
+
+    public ArrayList<Employee> getAllEmployees() {
+        ArrayList<Employee> allEmployees = new ArrayList<>(); // Initialiser une nouvelle liste à chaque appel
+        for (Department D : departments) {
+            allEmployees.addAll(D.getEmployeeList()); // Ajouter tous les employés d'un département directement
+        }
+        return allEmployees;
+    }
+
+
+    public void setAllEmployee(ArrayList<Employee> allEmployee) {
+        AllEmployee = allEmployee;
     }
 }
