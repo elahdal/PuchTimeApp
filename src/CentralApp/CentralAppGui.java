@@ -83,8 +83,8 @@ public class CentralAppGui {
                         frame.setLayout(new FlowLayout()); // Utiliser un layout simple
 
                         // Créer les boutons
-                        JButton button1 = new JButton("Button 1");
-                        JButton button2 = new JButton("Button 2");
+                        JButton button1 = new JButton("View All CheckIn's");
+                        JButton button2 = new JButton("View Employee CheckIn");
 
                         // Ajouter des écouteurs d'événements aux boutons
                         button1.addActionListener(new ActionListener() {
