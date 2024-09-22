@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PuchTimeApp.iml" filepath="$PROJECT_DIR$/PuchTimeApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimePunchApp.iml" filepath="$PROJECT_DIR$/TimePunchApp.iml" />
     </modules>
   </component>
 </project>
