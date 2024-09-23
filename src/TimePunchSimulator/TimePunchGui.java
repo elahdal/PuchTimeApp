@@ -1,6 +1,5 @@
 package TimePunchSimulator;
 
-import CentralApp.ResourcesOrganization.Employee;
 import Data.TimeRecord;
 
 import javax.swing.*;

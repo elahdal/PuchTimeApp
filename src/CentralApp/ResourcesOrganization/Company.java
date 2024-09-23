@@ -66,6 +66,7 @@ public class Company {
         return null; // Return null if no department matches the name
     }
 
+
     public void DepartmentListToString(){
         System.out.println( "+++++++++++++++++++++++++Department In :" +companyName+"+++++++++++++++++++++++++");
         for(Department e : departments){

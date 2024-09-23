@@ -1,4 +1,11 @@
 package ExportAndRead;
 
-public abstract class DataManager {
+public interface DataManager {
+     public void a();
+     public void b();
+     public void c();
+     public void d();
+
+
+
 }

@@ -47,11 +47,11 @@ public class MainCentralApp {
         E3.clockInOut(TR3);
 
 
-        //C.DepartmentListToString();
+        C.DepartmentListToString();
         System.out.println("TotalHoursWorked:  "+E2.calculateTotalHours());
 
 
-        // Test Pointage
+        //Test Pointage
         TimeRecord TR2 = new TimeRecord();
         TR2.setIdEmployee(" UUID2");
         C.addTimeRecord(TR2);

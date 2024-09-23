@@ -16,6 +16,7 @@ public class CentralAppGui {
         JFrame frame = new JFrame("Monitoring App");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 500);
+        frame.setBounds(200,150,600,500);
         frame.setLayout(new BorderLayout());
 
 
@@ -79,7 +80,7 @@ public class CentralAppGui {
                         // Créer la fenêtre
                         JFrame frame = new JFrame("Simple Frame");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                        frame.setSize(200, 100);
+                        frame.setBounds(250,200,300,150);
                         frame.setLayout(new FlowLayout()); // Utiliser un layout simple
 
                         // Créer les boutons
@@ -100,9 +101,29 @@ public class CentralAppGui {
                         button2.addActionListener(new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
-                                ViewCheckInOut v2 = new ViewCheckInOut(true);
-                                v2.startViewMonitoring();
-                                CentralAppController CGui=  new CentralAppController( C, "Test");
+                                JFrame frame2 = new JFrame("Simple Frame");
+                                frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                frame2.setBounds(250,200,400,150);
+                                frame2.setLayout(new FlowLayout());
+                                JTextField userIdField = new JTextField(20);
+
+                                JButton B = new JButton("View Employee");
+                                B.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        String Name = userIdField.getText();
+                                        ViewCheckInOut v2 = new ViewCheckInOut(true);
+                                        v2.addRows(C,Name);
+                                        v2.startViewMonitoring();
+
+                                        CentralAppController CGui=  new CentralAppController( C, "Test");
+                                    }
+                                });
+                                frame2.add(B);
+                                frame2.add(new JLabel("User Name :"));
+                                frame2.add(userIdField);
+
+                                frame2.setVisible(true);
                             }
                         });
 
@@ -116,6 +137,132 @@ public class CentralAppGui {
 
                     case "Manage Employees":
                         System.out.println("Action Manage Employees executed!");
+
+                        // Créer la fenêtre
+                        JFrame frame2 = new JFrame("Simple Frame");
+                        frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                        frame2.setBounds(250,200,300,150);
+                        frame2.setLayout(new FlowLayout()); // Utiliser un layout simple
+
+                        // Créer les boutons
+                        JButton button3 = new JButton("Add Employee");
+                        JButton button4 = new JButton("Delete Employee");
+                        JButton button5 = new JButton("Modify Employee");
+
+
+                        // Ajouter des écouteurs d'événements aux boutons
+                        button3.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                JFrame frame2 = new JFrame("Simple Frame");
+                                frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                frame2.setBounds(250,200,400,150);
+                                frame2.setLayout(new FlowLayout());
+                                JTextField userIdField = new JTextField(20);
+                                JTextField userDepartment = new JTextField(20);
+
+                                JButton B = new JButton("Add Employee");
+                                B.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        String Name = userIdField.getText();
+                                        String Dep =userDepartment.getText();
+                                        C.addEmployee(Name,C.getDepartmentByName(Dep));
+                                    }
+                                });
+                                frame2.add(B);
+                                frame2.add(new JLabel("User Name :"));
+                                frame2.add(userIdField);
+                                frame2.add(new JLabel("Department :"));
+                                frame2.add(userDepartment);
+
+                                frame2.setVisible(true);
+
+
+                            }
+                        });
+
+                        button4.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                JFrame frame2 = new JFrame("Simple Frame");
+                                frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                frame2.setBounds(250,200,400,150);
+                                frame2.setLayout(new FlowLayout());
+                                JTextField userIdField = new JTextField(20);
+
+                                JButton B = new JButton("Delete Employee");
+                                B.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        String Name = userIdField.getText();
+                                        C.deleteEmployee(C.getEmployeeByName(Name));
+                                    }
+                                });
+                                frame2.add(B);
+                                frame2.add(new JLabel("User Name :"));
+                                frame2.add(userIdField);
+
+                                frame2.setVisible(true);
+
+                            }
+                        });
+
+                        button5.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                JFrame frame2 = new JFrame("Simple Frame");
+                                frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                frame2.setBounds(250,200,400,150);
+                                frame2.setLayout(new FlowLayout());
+                                JTextField userIdField = new JTextField(20);
+                                JTextField dep = new JTextField(20);
+                                JTextField Heure = new JTextField(20);
+
+
+                                JButton B = new JButton("Modify Employee");
+                                B.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        String Name = userIdField.getText();
+                                        String depp = dep.getText();
+                                        String hour = Heure.getText();
+
+                                        //C.getEmployeeByName(Name).setHourStock(Integer.parseInt(String.valueOf(Heure)));
+                                       // C.getEmployeeByName(depp).
+                                    }
+                                });
+                                frame2.add(new JLabel("User Name :"));
+                                frame2.add(userIdField);
+                                frame2.add(new JLabel("User Name :"));
+                                frame2.add(dep);
+                                frame2.add(new JLabel("StockHour xx:xx:xx :"));
+                                frame2.add(Heure);
+
+                                frame2.setVisible(true);
+                                frame2.add(B);
+
+
+                            }
+                        });
+
+                        // Ajouter les boutons à la fenêtre
+                        frame2.add(button3);
+                        frame2.add(button4);
+                        frame2.add(button5);
+
+
+                        // Rendre la fenêtre visible
+                        frame2.setVisible(true);
+
+                        // Ajouter les boutons à la fenêtre
+                        frame2.add(button3);
+                        frame2.add(button4);
+                        frame2.add(button5);
+
+
+                        // Rendre la fenêtre visible
+                        frame2.setVisible(true);
                         break;
                     case "Setting":
                         System.out.println("Action Setting executed!");
@@ -130,5 +277,13 @@ public class CentralAppGui {
             }
         });
         return button;
+    }
+
+    public void CreateFrame(String Name){
+        // Créer la fenêtre
+        JFrame frame = new JFrame(Name);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(200, 100);
+        frame.setLayout(new FlowLayout()); // Utiliser un layout simple
     }
 }
