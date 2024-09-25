@@ -1,5 +1,9 @@
 # Rapport du Projet
 
+
+## UML
+
+
 ## Design Patterns Utilisés
 
 Ce projet implémente plusieurs **design patterns**, chacun ayant un rôle précis pour garantir la maintenance, l'évolutivité et la modularité du code.
@@ -7,6 +11,9 @@ Ce projet implémente plusieurs **design patterns**, chacun ayant un rôle préc
 - **MVC (Model-View-Controller)** : Utilisé dans la gestion des interfaces graphiques, ce pattern sépare la logique métier, l'interface utilisateur et le contrôle des actions.
   
 - **Template Method** : Permet la redéfinition de certaines étapes d'un algorithme dans des sous-classes sans modifier la structure globale de l'algorithme dans la classe parente.
+![Capture d'écran 2024-09-25 173859](https://github.com/user-attachments/assets/7fd7fc62-2ebc-44fa-9761-d6c46aa1bebf)
+![Capture d'écran 2024-09-25 173103](https://github.com/user-attachments/assets/37f041d4-6a71-46b5-8809-75ba9b722c92)
+![Capture d'écran 2024-09-25 173041](https://github.com/user-attachments/assets/3e89748f-cb2d-4425-9fc2-3b2eaebf86c3)
 
 ---
 
