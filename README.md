@@ -15,11 +15,10 @@ Ce projet implémente plusieurs **design patterns**, chacun ayant un rôle préc
 
 
 ---
-![Capture d'écran 2024-09-25 173103](https://github.com/user-attachments/assets/dcf59071-833c-4694-91de-72996a6d183f)
-![Capture d'écran 2024-09-25 173041](https://github.com/user-attachments/assets/114f2e48-e816-4452-8e75-35de8ba374b6)
-![Capture d'écran 2024-09-25 173029](https://github.com/user-attachments/assets/886baeb4-7096-45e7-a167-528166230055)
 
 ## 1. MVP : Model-View-Presenter
+![Capture d'écran 2024-09-25 173041](https://github.com/user-attachments/assets/114f2e48-e816-4452-8e75-35de8ba374b6)
+![Capture d'écran 2024-09-25 173029](https://github.com/user-attachments/assets/886baeb4-7096-45e7-a167-528166230055)
 
 Le modèle **MVP** est une variation du modèle **MVC**, particulièrement utilisée pour améliorer la testabilité de l'interface utilisateur. Dans ce projet, il est appliqué à l'interface graphique de l'application.
 
@@ -38,6 +37,7 @@ Le pattern MVP permet une séparation claire des responsabilités, facilitant ai
 ---
 
 ## 2. Template Method Pattern
+![Capture d'écran 2024-09-25 173103](https://github.com/user-attachments/assets/dcf59071-833c-4694-91de-72996a6d183f)
 
 Le pattern **Template Method** est utilisé pour définir une structure générique d'opérations tout en permettant aux sous-classes de redéfinir certaines étapes. Il est utilisé dans la gestion des exports de données.
 
