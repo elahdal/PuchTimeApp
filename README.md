@@ -1,5 +1,36 @@
 # Rapport du Projet
 
+## Introduction
+Ce projet tutoré Java vise à développer une application de suivi des pointages horaires des employés d’une entreprise. Il implique la conception et la réalisation de deux applications principales :
+
+Une application centrale utilisée par le département des ressources humaines pour suivre les pointages des employés.
+Un émulateur de pointeuse permettant la simulation des pointages des employés.
+L’objectif est de mettre en œuvre des concepts avancés de programmation orientée objet et de modélisation, ainsi que des patterns de conception comme le MVC et le Singleton.
+
+## Objectifs
+Les principaux objectifs du projet sont les suivants :
+
+Utilisation de la modélisation orientée objet (UML).
+Programmation en Java, avec gestion des dates, multithreading, sockets TCP, et sérialisation.
+Application des patterns MVC et Singleton.
+Développement en équipe et gestion du projet depuis la conception jusqu’à la livraison.
+# Fonctionnalités Principales
+
+## 3.1 Application Centrale
+L’application centrale est un outil de gestion RH pour consulter et gérer les pointages des employés, avec les fonctionnalités suivantes :
+
+  Gestion des pointages : Collecte, transfert et sauvegarde des données via des sockets TCP.
+  Sauvegarde des données : Les données des employés, départements, et pointages sont sauvegardées via la sérialisation Java.
+  Consultation des pointages : Les utilisateurs peuvent visualiser les pointages enregistrés.
+  Gestion des employés (CRUD) : Création, modification, suppression et visualisation des employés.
+  Gestion des paramètres : Configuration des paramètres réseau pour la communication avec les pointeuses.
+
+## 3.2 Émulateur de Pointeuse
+L’émulateur de pointeuse simule les actions des employés lors de l’enregistrement des pointages :
+
+Pointage en temps réel : Simule le pointage d’un employé avec date et heure, transféré à l’application centrale.
+Gestion des données hors ligne : Les pointages sont stockés localement si la connexion à l’application centrale est indisponible, puis transférés ultérieurement.
+Sérialisation des données : Les données sont automatiquement sauvegardées à la fermeture de l’application et restaurées lors du lancement.
 
 ## UML
 
