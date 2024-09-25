@@ -57,6 +57,8 @@ Ce pattern permet de centraliser le code commun tout en rendant chaque type d'ex
 
 ## 3. Ressources Humaines : `Company`, `Department`, `Employee`
 
+![Capture d'écran 2024-09-25 173055](https://github.com/user-attachments/assets/c534438f-b4a1-49e3-9806-6fedc6507ecf)
+
 Le package **ResourcesOrganization** contient des classes modélisant la gestion des ressources humaines.
 
 ### Classes principales :
